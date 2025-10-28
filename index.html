@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clã Glória Eterna</title>
+  <meta name="color-scheme" content="dark">
+  <style>
+    :root{
+      --bg:#000000;
+      --primary:#ff1a1a; /* vermelho principal */
+      --primary-weak:#ff1a1acc;
+      --accent:#ff3b3b;
+      --card:#0b0b0b;
+      --line:#1a1a1a;
+      --shadow:0 10px 30px rgba(255,26,26,0.08);
+      --radius:18px;
+      --maxw:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--primary);
+      font-family:Verdana, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      line-height:1.6;
+      letter-spacing:.2px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--primary); text-decoration:none}
+    a:hover{color:#fff}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:saturate(140%) blur(6px);
+      background:linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.65));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      max-width:var(--maxw); margin:0 auto; padding:12px 24px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.5px;
+    }
+    .brand .logo{
+      width:36px; height:36px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--accent), #5a0000 60%, #000);
+      box-shadow:0 0 18px rgba(255,58,58,.25), inset 0 0 12px rgba(255,58,58,.25);
+    }
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border:1px solid var(--accent); border-radius:14px;
+      background:linear-gradient(180deg, #140000, #070000);
+      color:var(--primary); font-weight:700; text-transform:uppercase; font-size:.9rem;
+      letter-spacing:.4px; box-shadow:var(--shadow); transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:#fff; color:#fff}
+    .btn:active{transform:translateY(0)}
+    .btn.small{padding:10px 12px; font-size:.8rem}
+    .hero{
+      padding:52px 24px 28px; text-align:center;
+      background:
+        radial-gradient(1200px 400px at 50% -5%, rgba(255,26,26,.12), transparent 60%),
+        radial-gradient(800px 400px at 0% 20%, rgba(255,26,26,.06), transparent 60%),
+        radial-gradient(800px 400px at 100% 20%, rgba(255,26,26,.06), transparent 60%);
+      border-bottom:1px solid var(--line);
+    }
+    h1{
+      margin:6px 0 10px;
+      font-size:clamp(28px, 5vw, 48px);
+      line-height:1.15;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      text-shadow:0 0 18px rgba(255,26,26,.18);
+    }
+    .subtitle{
+      font-style:italic; opacity:.95; margin:0 auto 18px; max-width:900px;
+      font-size:clamp(14px, 2.5vw, 18px);
+    }
+    .grid{
+      display:grid; gap:18px; margin:28px auto; max-width:var(--maxw);
+      grid-template-columns:repeat(12, 1fr);
+    }
+    .card{
+      grid-column:span 12;
+      background:linear-gradient(180deg, #0a0000, var(--card));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px 18px 20px;
+      box-shadow:var(--shadow);
+    }
+    @media (min-width:768px){
+      .card.span6{grid-column:span 6}
+      .card.span4{grid-column:span 4}
+    }
+    h2{
+      margin:0 0 10px; font-size:clamp(18px, 2.6vw, 24px);
+      text-transform:uppercase; letter-spacing:.8px;
+    }
+    p{margin:8px 0; color:var(--primary-weak)}
+    ul{padding-left:18px; margin:8px 0; color:var(--primary-weak)}
+    li{margin:6px 0}
+    .mono{
+      font-family:Consolas, "Courier New", ui-monospace, monospace;
+      font-size:.95rem;
+      line-height:1.55;
+      word-break:break-word;
+      white-space:pre-wrap;
+      color:var(--primary);
+    }
+    .ctas{
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px;
+    }
+    footer{
+      border-top:1px solid var(--line);
+      margin-top:30px; padding:22px 24px; text-align:center; font-size:.9rem; color:var(--primary-weak)
+    }
+    .pill{
+      display:inline-block; border:1px solid var(--line); padding:6px 10px; border-radius:999px;
+      font-size:.8rem; letter-spacing:.4px; text-transform:uppercase; opacity:.9; background:#0a0000;
+    }
+    .divider{height:1px; background:var(--line); margin:10px 0 14px}
+  </style>
+</head>
+<body>
+  <!-- Topo -->
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Clã <strong>Glória Eterna</strong></div>
+      </div>
+      <div class="links">
+        <a class="btn small" href="https://s53-br.bitefight.gameforge.com/clan/viewExtern/6" target="_blank" rel="noopener">Página do Clã</a>
+        <a class="btn small" href="https://chat.whatsapp.com/FwtD4BavXlA53ypvEynaty?mode=wwt" target="_blank" rel="noopener">Entrar no WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill">Servidor 53 • BiteFight</span>
+      <h1>GLÓRIA ETERNA</h1>
+      <p class="subtitle">“A verdadeira glória não é dada… é conquistada no sangue e na escuridão.”</p>
+      <div class="ctas">
+        <a class="btn" href="https://s53-br.bitefight.gameforge.com/clan/viewExtern/6" target="_blank" rel="noopener">Ver Clã no Jogo</a>
+        <a class="btn" href="https://chat.whatsapp.com/FwtD4BavXlA53ypvEynaty?mode=wwt" target="_blank" rel="noopener">Entrar no Grupo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <main class="wrap">
+    <div class="grid">
+      <!-- Quem somos -->
+      <article class="card span6">
+        <h2>Quem somos</h2>
+        <div class="divider"></div>
+        <p>Somos guerreiros que não temem a noite nem a luz. A força é forjada pela lealdade, e a glória é o destino de quem nunca recua. Cada batalha é uma oportunidade de provar valor; cada vitória, um passo rumo à eternidade.</p>
+      </article>
+
+      <!-- Nosso lema -->
+      <article class="card span6">
+        <h2>Nosso lema</h2>
+        <div class="divider"></div>
+        <p><strong>“Pela Honra, pela Força, pela Glória!”</strong></p>
+      </article>
+
+      <!-- Buscamos -->
+      <article class="card span6">
+        <h2>Buscamos</h2>
+        <div class="divider"></div>
+        <ul>
+          <li>Membros <strong>ativos e leais</strong> (entrar diariamente ou avisar ausência).</li>
+          <li>Vontade de aprender, evoluir e lutar em equipe.</li>
+        </ul>
+      </article>
+
+      <!-- Oferecemos -->
+      <article class="card span6">
+        <h2>Oferecemos</h2>
+        <div class="divider"></div>
+        <ul>
+          <li>Apoio real: <strong>builds, equipamentos, rotas de farm e gruta</strong>.</li>
+          <li>Estratégias claras de guerra, <strong>alvos</strong> e <strong>janelas de ataque</strong>.</li>
+        </ul>
+      </article>
+
+  <script>
+    // Atualiza ano automaticamente
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
